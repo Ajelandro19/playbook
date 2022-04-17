@@ -75,3 +75,11 @@ const explorers = [
 
    const all_exercises = explorers.reduce((acc, explorer) => acc + explorer.exercises_completed, 0)
    console.log(all_exercises)
+   //Obtén la validación si al menos uno de los explorers tiene la propiedad exercisesFinished en frontend como true, usa SOME
+  //explorers.forEach(explorer => console.log(explorer.missions.frontend.isFinished))
+   const frontfinished = explorers.some((b) => b.missions.frontend.isFinished === true)
+   console.log("Ejercicio7: Algún explorer terminó frontend: " + frontfinished)
+
+   //Obtén la validación si todos los explorers tienen la propiedad isFinished del onboarding como true. Usa EVERY.
+   const allfinishedonboarding = explorers.every((a) => a.missions.onboarding.isFinished=== true)
+   console.log("Ejercicio8: Todos los explorers terminaron el onboarding: " + allfinishedonboarding)
